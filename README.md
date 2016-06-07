@@ -15,7 +15,7 @@ Its **best practice** to run each service in his own Docker container. To orches
 - [Awesome Docker](http://veggiemonk.github.io/awesome-docker/)
 - [from Vagrant to Docker](http://blog.osteel.me/posts/2015/12/18/from-vagrant-to-docker-how-to-use-docker-for-local-web-development.html)
 - [Docker Images Comparison](https://www.brianchristner.io/docker-image-base-os-size-comparison/)
-- [Docker related Blog](https://labs.ctl.io/) -
+- [Docker related Blog](https://labs.ctl.io/)
 
 ## Docker Images
 
@@ -69,6 +69,7 @@ Visit [Docker Hub](https://hub.docker.com/) for Docker Containers.
 #### Attacking
 
 - `docker pull kalilinux/kali-linux-docker` [official Kali Linux](https://hub.docker.com/r/kalilinux/kali-linux-docker/)
+- `docker pull owasp/zap2docker-stable` - [official OWASP ZAP](https://github.com/zaproxy/zaproxy)
 
 #### Vulnerable
 
