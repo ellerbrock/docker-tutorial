@@ -57,13 +57,12 @@ Visit [Docker Hub](https://hub.docker.com/) for Docker Containers.
 
 #### Blog
 
-- `docker pull ghost` - [official ghost](https://https://hub.docker.com/_/ghost/.docker.com/r/gugu/raneto/)
+- `docker pull ghost` - [official ghost](https://hub.docker.com/_/ghost/)
 
 ### NoSQL
 
 - `docker pull mongo` - [official MongoDB](https://hub.docker.com/_/mongo/)
 - `docker pull redis` - [official Redis](https://hub.docker.com/_/redis/)
--
 
 ### Docker Images for Penetration Testing & Security
 
