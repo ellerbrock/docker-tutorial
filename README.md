@@ -1,6 +1,6 @@
 ![Docker](https://github.frapsoft.com/top/docker.png)
 
-# Docker Tutorial [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+# Docker Tutorial [![Build Status](https://travis-ci.org/ellerbrock/docker-tutorial.svg?branch=master)](https://travis-ci.org/ellerbrock/docker-tutorial) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
 
 ## Installation
 
