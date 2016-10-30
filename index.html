@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Docker Tutorial by ellerbrock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Docker Tutorial</h1>
+      <h2 class="project-tagline">Getting Started with Docker</h2>
+      <a href="https://github.com/ellerbrock/docker-tutorial" class="btn">View on GitHub</a>
+      <a href="https://github.com/ellerbrock/docker-tutorial/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ellerbrock/docker-tutorial/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://github.frapsoft.com/top/docker.png" alt="Docker"></p>
+
+<h1>
+<a id="docker-tutorial---" class="anchor" href="#docker-tutorial---" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Tutorial <a href="https://travis-ci.org/ellerbrock/docker-tutorial"><img src="https://travis-ci.org/ellerbrock/docker-tutorial.svg?branch=master" alt="Build Status"></a> <a href="https://github.com/ellerbrock/open-source-badge/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102" alt="Open Source Love"></a> <a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://badges.gitter.im/frapsoft/frapsoft.svg" alt="Gitter Chat"></a>
+</h1>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Download the <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a>.</p>
+
+<p>Its <strong>best practice</strong> to run each service in his own Docker container. To orchestrate them we need <a href="https://docs.docker.com/compose/">Docker Compose</a>.</p>
+
+<p><code>docker-machine</code> for administration and configuration von Docker Machines</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<ul>
+<li><a href="http://veggiemonk.github.io/awesome-docker/">Awesome Docker</a></li>
+<li><a href="http://blog.osteel.me/posts/2015/12/18/from-vagrant-to-docker-how-to-use-docker-for-local-web-development.html">from Vagrant to Docker</a></li>
+<li><a href="https://www.brianchristner.io/docker-image-base-os-size-comparison/">Docker Images Comparison</a></li>
+<li><a href="https://labs.ctl.io/">Docker related Blog</a></li>
+</ul>
+
+<h2>
+<a id="docker-images" class="anchor" href="#docker-images" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Images</h2>
+
+<p>Visit <a href="https://hub.docker.com/">Docker Hub</a> for Docker Containers.</p>
+
+<h3>
+<a id="plain-linux" class="anchor" href="#plain-linux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plain Linux</h3>
+
+<ul>
+<li>
+<code>docker pull alpine</code> - <a href="https://hub.docker.com/_/alpine/">official Alpine</a> | <a href="http://gliderlabs.viewdocs.io/docker-alpine/">Documentation</a> | <a href="http://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management#Update_the_Package_list">apk</a> | <a href="https://pkgs.alpinelinux.org/packages">packages</a>
+</li>
+<li>
+<code>docker pull busybox</code> - <a href="https://hub.docker.com/_/busybox/">official BusyBox</a>
+</li>
+<li>
+<code>docker pull centos</code> - <a href="https://hub.docker.com/_/centos/">CentOS</a>
+</li>
+<li>
+<code>docker pull debian</code> - <a href="https://hub.docker.com/_/debian/">official Debian</a>
+</li>
+<li>
+<code>docker pull ubuntu</code> - <a href="https://hub.docker.com/_/ubuntu/">official Ubuntu</a>
+</li>
+</ul>
+
+<h3>
+<a id="lamp--lemp-stack" class="anchor" href="#lamp--lemp-stack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LAMP / LEMP Stack</h3>
+
+<ul>
+<li>
+<code>docker pull eboraas/apache</code> - <a href="https://hub.docker.com/r/eboraas/apache/">official Apache</a>
+</li>
+<li>
+<code>docker pull nginx</code> - <a href="https://hub.docker.com/_/nginx/">official nginx</a>
+</li>
+<li>
+<code>docker pull php</code> - <a href="https://hub.docker.com/_/php/">official PHP</a>
+</li>
+<li>
+<code>docker pull mariadb</code> - <a href="https://hub.docker.com/_/mariadb/">official MariaDB</a>
+</li>
+<li>
+<code>docker pull mysql</code> <a href="https://hub.docker.com/_/mysql/">official MySQL</a>
+</li>
+</ul>
+
+<h4>
+<a id="php-applications" class="anchor" href="#php-applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHP Applications</h4>
+
+<ul>
+<li>
+<code>docker pull wordpress</code> - <a href="https://hub.docker.com/_/wordpress/">official Wordpress</a>
+</li>
+<li>
+<code>docker pull piwik</code> - <a href="https://hub.docker.com/_/piwik/">official Piwik</a>
+</li>
+<li>
+<code>docker pull phpmyadmin/phpmyadmin</code> - <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/">phpmyadmin</a>
+</li>
+</ul>
+
+<h3>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js</h3>
+
+<ul>
+<li>
+<code>docker pull node</code> - <a href="https://hub.docker.com/_/node/">official Node.js</a>
+</li>
+</ul>
+
+<h4>
+<a id="phusion-passenger" class="anchor" href="#phusion-passenger" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phusion Passenger</h4>
+
+<ul>
+<li>
+<code>brew install passenger</code> - optimized Node.js Image</li>
+</ul>
+
+<h4>
+<a id="flat-file-cms" class="anchor" href="#flat-file-cms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Flat File CMS</h4>
+
+<ul>
+<li>
+<code>docker pull gugu/raneto</code> - <a href="https://hub.docker.com/r/gugu/raneto/">Raneto</a>
+</li>
+</ul>
+
+<h4>
+<a id="blog" class="anchor" href="#blog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blog</h4>
+
+<ul>
+<li>
+<code>docker pull ghost</code> - <a href="https://hub.docker.com/_/ghost/">official ghost</a>
+</li>
+</ul>
+
+<h3>
+<a id="nosql" class="anchor" href="#nosql" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoSQL</h3>
+
+<ul>
+<li>
+<code>docker pull mongo</code> - <a href="https://hub.docker.com/_/mongo/">official MongoDB</a>
+</li>
+<li>
+<code>docker pull redis</code> - <a href="https://hub.docker.com/_/redis/">official Redis</a>
+</li>
+</ul>
+
+<h3>
+<a id="docker-images-for-penetration-testing--security" class="anchor" href="#docker-images-for-penetration-testing--security" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Images for Penetration Testing &amp; Security</h3>
+
+<ul>
+<li>
+<code>docker pull kalilinux/kali-linux-docker</code> <a href="https://hub.docker.com/r/kalilinux/kali-linux-docker/">official Kali Linux</a>
+</li>
+<li>
+<code>docker pull owasp/zap2docker-stable</code> - <a href="https://github.com/zaproxy/zaproxy">official OWASP ZAP</a>
+</li>
+<li>
+<code>docker pull wpscanteam/wpscan</code> - <a href="https://hub.docker.com/r/wpscanteam/wpscan/">official WPScan</a>
+</li>
+<li>
+<code>docker pull pandrew/metasploit</code> - <a href="https://hub.docker.com/r/pandrew/metasploit/">docker-metasploit</a>
+</li>
+<li>
+<code>docker pull citizenstig/dvwa</code> - <a href="https://hub.docker.com/r/citizenstig/dvwa/">Damn Vulnerable Web Application (DVWA)</a>
+</li>
+<li>
+<code>docker pull wpscanteam/vulnerablewordpress</code> - <a href="https://hub.docker.com/r/wpscanteam/vulnerablewordpress/">Vulnerable WordPress Installation</a>
+</li>
+<li>
+<code>docker pull hmlio/vaas-cve-2014-6271</code> - <a href="https://hub.docker.com/r/hmlio/vaas-cve-2014-6271/">Vulnerability as a service: Shellshock</a>
+</li>
+<li>
+<code>docker pull hmlio/vaas-cve-2014-0160</code> - <a href="https://hub.docker.com/r/hmlio/vaas-cve-2014-0160/">Vulnerability as a service: Heartbleed</a>
+</li>
+<li>
+<code>docker pull opendns/security-ninjas</code> - <a href="https://hub.docker.com/r/opendns/security-ninjas/">Security Ninjas</a>
+</li>
+<li>
+<code>docker pull usertaken/archlinux-pentest-lxde</code> - <a href="https://hub.docker.com/r/usertaken/archlinux-pentest-lxde/">Arch Linux Penetration Tester</a>
+</li>
+<li>
+<code>docker pull diogomonica/docker-bench-security</code> - <a href="https://hub.docker.com/r/diogomonica/docker-bench-security/">Docker Bench for Security</a>
+</li>
+<li>
+<code>docker pull ismisepaul/securityshepherd</code> - <a href="https://hub.docker.com/r/ismisepaul/securityshepherd/">OWASP Security Shepherd</a>
+</li>
+<li>
+<code>docker pull danmx/docker-owasp-webgoat</code> - <a href="https://hub.docker.com/r/danmx/docker-owasp-webgoat/">OWASP WebGoat Project docker image</a>
+</li>
+<li>
+<code>docker pull citizenstig/nowasp</code> - <a href="https://hub.docker.com/r/citizenstig/nowasp/">OWASP Mutillidae II Web Pen-Test Practice Application</a>
+</li>
+</ul>
+
+<h3>
+<a id="continuous-integration-testing" class="anchor" href="#continuous-integration-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Continuous Integration Testing</h3>
+
+<ul>
+<li>
+<code>docker pull jenkins</code> - <a href="https://hub.docker.com/_/jenkins/">official Jenkins</a>
+</li>
+</ul>
+
+<h3>
+<a id="others" class="anchor" href="#others" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Others</h3>
+
+<ul>
+<li>
+<code>docker pull jbenet/go-ipfs</code> - <a href="https://hub.docker.com/r/jbenet/go-ipfs/">IPFS</a>
+</li>
+</ul>
+
+<h2>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
+
+<p>I recommend reading the <a href="https://github.com/wsargent/docker-cheat-sheet">Docker Cheat Sheet</a>.</p>
+
+<ul>
+<li>
+<code>docker images</code> - list installed images</li>
+<li>
+<code>docker ps</code> - shows running containers</li>
+<li>
+<code>docker-machine active</code> - list active machines</li>
+<li>
+<code>docker-machine ip default</code> - get the IP from the default container</li>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>
+<a id="start-apache-with-https-and-map-htdocs-folder" class="anchor" href="#start-apache-with-https-and-map-htdocs-folder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Start Apache with http(s) and map htdocs folder</h3>
+
+<p><code>docker run -p 80:80 -p 443:443 -v /Volumes/Daten/Daten/Programmierung/coding/docker/data/htdocs:/var/www/html/ -d eboraas/apache</code></p>
+
+<h3>
+<a id="start-kali-linux-with-interactive-bash-shell" class="anchor" href="#start-kali-linux-with-interactive-bash-shell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Start Kali Linux with interactive bash Shell</h3>
+
+<pre><code>docker pull kalilinux/kali-linux-docker
+docker run -t -i kalilinux/kali-linux-docker /bin/bash
+</code></pre>
+
+<h3>
+<a id="contact--social-media" class="anchor" href="#contact--social-media" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact / Social Media</h3>
+
+<p><em>Get the latest News about Web Development, Open Source, Tooling, Server &amp; Security</em></p>
+
+<p><a href="https://twitter.com/frapsoft/"><img src="https://github.frapsoft.com/social/twitter.png" alt="Twitter"></a>
+<a href="https://www.facebook.com/frapsoft/"><img src="https://github.frapsoft.com/social/facebook.png" alt="Facebook"></a>
+<a href="https://plus.google.com/116540931335841862774"><img src="https://github.frapsoft.com/social/google-plus.png" alt="Google+"></a>
+<a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://github.frapsoft.com/social/gitter.png" alt="Gitter"></a>
+<a href="https://github.com/ellerbrock/"><img src="https://github.frapsoft.com/social/github.png" alt="Github"></a></p>
+
+<h3>
+<a id="development-by" class="anchor" href="#development-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development by</h3>
+
+<p>Developer / Author: <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a><br>
+Company: <a href="https://github.com/frapsoft/">Frapsoft</a></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br></p>
+
+<p>This work by <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ellerbrock/docker-tutorial">Docker Tutorial</a> is maintained by <a href="https://github.com/ellerbrock">ellerbrock</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
